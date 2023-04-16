@@ -43,11 +43,19 @@ jobs:
         with:
           name: java-app
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
+      - name: Set up Azure Web App Deploy action
         uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
         with:
           app-name: 'ITE5435-Rohan'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_53BD974C63FA4B39A1E8512F885E84BC }}
           package: '*.war'
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'ITE5435-Rohan'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_53BD974C63FA4B39A1E8512F885E84BC }}
+          package: ${{ github.workspace }}/java-app/*.war
