@@ -43,6 +43,11 @@ jobs:
         with:
           name: java-app
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ NGH0Hk724Lf80R1bSsR6uKrzisY1Ksnz4FqxNc6RiXn8qrWXNAXXd4aWvXy6 }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
