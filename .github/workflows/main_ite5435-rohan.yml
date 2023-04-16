@@ -50,5 +50,4 @@ jobs:
           app-name: 'ITE5435-Rohan'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8AC3692B387E430B8836FD9FC0FE3650 }}
-          package: '*.war'{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8AC3692B387E430B8836FD9FC0FE3650 }}
           package: '*.war'
